@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Ciudadano | AGETIC</title>
+    <link rel="stylesheet" href="index.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i data-lucide="shield-check"></i>
+                <span data-i18n="header-title">AGETIC</span>
+            </div>
+            <div class="nav-actions">
+                <div class="lang-toggle" id="langToggle">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="qu">QU</button>
+                    <button class="lang-btn" data-lang="ay">AY</button>
+                </div>
+                <div class="user-profile">
+                    <span data-i18n="user-name">Juan Pérez</span>
+                    <div class="avatar">JP</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1 data-i18n="hero-title">¿Qué trámite deseas realizar hoy?</h1>
+                <div class="search-container">
+                    <i data-lucide="search" class="search-icon"></i>
+                    <input type="text" id="mainSearch" class="search-bar" placeholder="Escribe lo que necesitas (ej: Perdí mi carnet)..." data-i18n-placeholder="search-placeholder">
+                </div>
+                <div class="quick-tags" id="quickTags">
+                    <span class="tag" data-i18n="tag-id">Renovar Carnet</span>
+                    <span class="tag" data-i18n="tag-license">Licencia de Conducir</span>
+                    <span class="tag" data-i18n="tag-health">Seguro de Salud</span>
+                    <span class="tag" data-i18n="tag-education">Certificado Notas</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Detection Alert (Dynamic) -->
+        <div id="detectionAlert" class="container" style="display: none; margin-top: -40px; position: relative; z-index: 10;">
+            <!-- Rendered by JS -->
+        </div>
+
+        <section class="container" style="margin-top: 64px;">
+            <h2 class="section-title" data-i18n="categories-title">Categorías de Vida</h2>
+            <div class="categories-grid" id="categoriesGrid">
+                <div class="category-card animate-fade" data-category="Identidad Legal">
+                    <div class="category-icon"><i data-lucide="user"></i></div>
+                    <h3 data-i18n="cat-identity">Identidad Legal</h3>
+                </div>
+                <div class="category-card animate-fade" style="animation-delay: 0.1s;" data-category="Salud">
+                    <div class="category-icon"><i data-lucide="heart"></i></div>
+                    <h3 data-i18n="cat-health">Salud</h3>
+                </div>
+                <div class="category-card animate-fade" style="animation-delay: 0.2s;" data-category="Educación">
+                    <div class="category-icon"><i data-lucide="graduation-cap"></i></div>
+                    <h3 data-i18n="cat-education">Educación</h3>
+                </div>
+                <div class="category-card animate-fade" style="animation-delay: 0.3s;" data-category="Vivienda">
+                    <div class="category-icon"><i data-lucide="home"></i></div>
+                    <h3 data-i18n="cat-housing">Vivienda</h3>
+                </div>
+                <div class="category-card animate-fade" style="animation-delay: 0.4s;" data-category="Transporte">
+                    <div class="category-icon"><i data-lucide="car"></i></div>
+                    <h3 data-i18n="cat-transport">Transporte</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="procedures-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="active-procedures">Mis Trámites Activos</h2>
+                <div class="procedures-grid" id="proceduresGrid">
+                    <!-- Cards rendered by JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Agent Chat -->
+    <div class="chat-fab" id="chatFab">
+        <i data-lucide="message-circle"></i>
+    </div>
+
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <i data-lucide="bot"></i>
+            <div>
+                <strong data-i18n="agent-name">Asistente Digital</strong>
+                <p style="font-size: 0.75rem; opacity: 0.8;" data-i18n="agent-status">En línea - Listo para ayudar</p>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message message-ai" data-i18n="welcome-msg">¡Hola! Soy tu asistente ciudadano. ¿En qué trámite puedo orientarte hoy?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" placeholder="Escribe un mensaje..." id="chatInput" data-i18n-placeholder="chat-placeholder">
+            <button class="btn-primary" style="padding: 8px 16px;" id="sendBtn"><i data-lucide="send"></i></button>
+        </div>
+    </div>
+
+    <!-- Procedure Detail Modal -->
+    <div class="procedure-modal" id="procedureModal">
+        <div class="modal-content">
+            <i data-lucide="x" class="close-modal" id="closeModal"></i>
+            <div id="modalBody">
+                <!-- Content rendered by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

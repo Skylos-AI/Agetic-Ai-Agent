@@ -1,0 +1,77 @@
+Product Requirements Document (PRD): AI-Driven Citizen Assistant
+1. Executive Summary
+The AI-Driven Citizen Assistant is a centralized digital portal designed to simplify government bureaucracy through Natural Language Processing (NLP). By shifting from a static, document-heavy structure to a conversational, goal-oriented interface, the platform serves as a "Single Point of Contact" between the state and its citizens. While the user interface operates in Spanish (with native language support), this document outlines the technical and aesthetic requirements for the initial functional mockup.
+
+2. Design Philosophy and Aesthetic Guidelines
+The interface must prioritize accessibility and trust, moving away from traditional "bureaucratic" design patterns in favor of a modern, human-centric aesthetic.
+
+Visual Style: Clean, minimalist, and spacious.
+
+Color Palette: A primary base of White (#FFFFFF) and Light Gray (#F8F9FA) to reduce cognitive load. Action items and primary branding use Institutional Blue (#1A5AD7), while progress indicators use Success Green (#28A745).
+
+Typography: Sans-serif fonts (e.g., Inter or Roboto) to ensure high legibility across mobile and desktop devices.
+
+Component Geometry: Rounded corners (12px to 16px radius) for all cards, buttons, and input fields to convey a friendly, non-rigid environment.
+
+3. Core Functional Requirements
+3.1. Intelligent NLP Search Engine
+The primary entry point is a prominent search bar that replaces traditional navigation menus.
+
+Functional Goal: Understand user intent rather than literal keyword matching.
+
+Mockup Behavior: If a user types "I lost my ID" (in Spanish: "Perdí mi carnet"), the system should bypass generic search results and directly present the "Identity Card Replacement" procedure card.
+
+3.2. Omnichannel AI Agent (The "Principal Agent")
+A persistent, conversational interface available via a Floating Action Button (FAB).
+
+Functional Goal: Guide the user through multi-step procedures.
+
+Mockup Behavior: The agent should offer context-aware suggestions. If the user is on the "Driver’s License" page, the agent should proactively ask if they need help scheduling a medical exam.
+
+3.3. Life-Event Categorization
+Instead of grouping services by government ministry, services are grouped by user needs.
+
+Categories: Housing, Education, Health, Transportation, and Legal Identity.
+
+Logic: This allows the user to find related services they might not have known existed.
+
+3.4. Multilingual Translation Engine
+Real-time interface translation for inclusivity.
+
+Functional Goal: Provide instant toggling between Spanish, Quechua, and Aymara.
+
+Mockup Behavior: All text strings in the UI must be mapped to a translation dictionary that updates without a page refresh.
+
+4. User Interface (UI) Components
+4.1. Global Header
+Brand Identifier: AGETIC/State Logo.
+
+Language Toggle: A minimalist text-based selector for Spanish, Quechua, and Aymara.
+
+User Profile: Access to "My Procedures" and "Document Vault."
+
+4.2. Search Hero Section
+Input Field: A large, centered search bar with soft shadows.
+
+Dynamic Suggestions: Below the search bar, a row of "Quick Action" tags for the most frequently requested services.
+
+4.3. Procedure Dashboard
+Active Procedure Cards: Displayed in a grid. Each card includes the procedure name, a percentage-based progress bar, and a "Next Step" call to action.
+
+Requirement Checklist: A vertical list within the procedure view that distinguishes between "Validated Documents" (already in state databases) and "Required Documents" (to be provided by the user).
+
+5. Interaction Flow (The "Mockup Path")
+Entry: The user arrives at the Spanish-language landing page.
+
+Inquiry: User types a natural language query into the central search bar.
+
+Identification: The UI displays a "Procedure Detected" card with an "Initiate" button.
+
+Guidance: The AI Agent opens a chat window to explain the requirements (Cost, Location, Duration).
+
+Completion Path: The UI renders a visual roadmap showing the user’s current position in the bureaucracy.
+
+6. Technical Specifications for Mockup Data
+Data Structure: Procedures should be stored as JSON objects containing: ID, Name, Description, Category, Requirements (Array), and Estimated Time.
+
+State Management: The mockup must track the "User State" (e.g., Logged In, Age, Document Status) to demonstrate how the AI personalizes the experience.
