@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import SearchHero from '@/components/SearchHero';
 import CategoryGrid from '@/components/CategoryGrid';
 import DigitalCitizenSection from '@/components/DigitalCitizenSection';
+import BlockchainNotarization from '@/components/BlockchainNotarization';
 import ProcedureCard from '@/components/ProcedureCard';
 import AiAgent from '@/components/AiAgent';
 import ProcedureModal from '@/components/ProcedureModal';
@@ -22,6 +23,9 @@ export default function Home() {
 
         {/* Ciudadanía Digital Section (Dark Cards) */}
         <DigitalCitizenSection />
+
+        {/* Blockchain Notarization Section */}
+        <BlockchainNotarization />
 
         {/* Categories */}
         <CategoryGrid />
