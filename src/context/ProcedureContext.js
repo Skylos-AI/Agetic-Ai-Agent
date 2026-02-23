@@ -65,10 +65,17 @@ export function ProcedureProvider({ children }) {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [activeProcedure, setActiveProcedure] = useState(null);
     const [aiTrigger, setAiTrigger] = useState(null);
+    const [isDigitalCitizen, setIsDigitalCitizen] = useState(false);
+    const [explanationType, setExplanationType] = useState(null); // 'blockchain' or 'ai'
+
+    const toggleDigitalCitizenship = () => setIsDigitalCitizen(!isDigitalCitizen);
 
     const triggerAiMessage = (message) => {
         setAiTrigger({ message, timestamp: Date.now() });
     };
+
+    const openExplanation = (type) => setExplanationType(type);
+    const closeExplanation = () => setExplanationType(null);
 
     const filteredProcedures = selectedCategory
         ? procedures.filter(p => p.category === selectedCategory)
@@ -92,7 +99,12 @@ export function ProcedureProvider({ children }) {
             activeProcedure,
             setActiveProcedure,
             aiTrigger,
-            triggerAiMessage
+            triggerAiMessage,
+            isDigitalCitizen,
+            toggleDigitalCitizenship,
+            explanationType,
+            openExplanation,
+            closeExplanation
         }}>
             {children}
         </ProcedureContext.Provider>

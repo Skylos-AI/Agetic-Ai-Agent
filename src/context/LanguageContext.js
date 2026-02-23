@@ -33,7 +33,15 @@ const translations = {
         "alert-match": "He detectado un trámite para ti:",
         "carnet-response": "Para trámites de identidad, necesitas tu certificado de nacimiento. He cargado la información en tu panel.",
         "cost-response": "El costo varía según el trámite, pero la mayoría de las validaciones de documentos estatales son gratuitas.",
-        "generic-response": "Entendido. Estoy procesando tu solicitud sobre '{query}'. ¿Deseas que te muestre los requisitos detallados?"
+        "generic-response": "Entendido. Estoy procesando tu solicitud sobre '{query}'. ¿Deseas que te muestre los requisitos detallados?",
+        "cd-required": "Para iniciar cualquier trámite, es necesario que estés registrado en **Ciudadanía Digital**. ¿Deseas verificar tu registro?",
+        "cd-verify-btn": "Verificar Registro",
+        "cd-verifying": "Iniciando protocolo de seguridad... 🛡️",
+        "cd-biometric": "Validación biométrica en curso...",
+        "cd-encryption": "Encriptando sesión con llave ciudadana...",
+        "cd-success": "✅ Identidad verificada. Registro en **Ciudadanía Digital** activo con nivel de seguridad Alto.",
+        "security-level": "Nivel de Seguridad: Máximo",
+        "biometric-prompt": "Posicione su rostro frente a la cámara para la validación con SEGIP"
     },
     qu: {
         "header-title": "AGETIC",
@@ -65,7 +73,15 @@ const translations = {
         "alert-match": "Kay ruranata tarini qampaq:",
         "carnet-response": "Kikinyachiy ruranapaqqa, paqariymanta qillqaykita munanki. Willaytaqa ñawpaqman churaniña.",
         "cost-response": "Chaninqa sapa ruranamanjina t'aqakun, ichaqa astawanqa ruranakunaqa mana chaninniyuq kanku.",
-        "generic-response": "Allin. Llamkachkani ruranaykimanta '{query}'. Munankichu rikuchisayki imakunachus munasqaykita?"
+        "generic-response": "Allin. Llamkachkani ruranaykimanta '{query}'. Munankichu rikuchisayki imakunachus munasqaykita?",
+        "cd-required": "Ima ruranatapas qallarinaykipaqqa, **Ciudadanía Digital** ukupi qillqasqa kanayki tiyan. Munankichu qillqasqa kasqaykita qhawayta?",
+        "cd-verify-btn": "Qillqayta Qhaway",
+        "cd-verifying": "Jark'ay ñankunata qallarispa... 🛡️",
+        "cd-biometric": "Rikch'ayniykita qhawarikuchkan...",
+        "cd-encryption": "Llaqtayuq t'inkiykita pakaspa...",
+        "cd-success": "✅ Sutiyki chaninchasqaña. **Ciudadanía Digital** qillqasqayki kachkanña kuraq jark'aywan.",
+        "security-level": "Jark'ay kaskasqan: Tukuy",
+        "biometric-prompt": "Uyaykita rikuchiy SEGIP qhawanapaq"
     },
     ay: {
         "header-title": "AGETIC",
@@ -97,7 +113,15 @@ const translations = {
         "alert-match": "Kast luraña jumanakatak jikxta:",
         "carnet-response": "Jakawi lurañatakix, yuriwi p'anqam munasta. Yatichawix panel ch'usamaruw uskuwayta.",
         "cost-response": "Qullqix lurañarjamaw mayjt'i, jilpachax estado ukan ruranakapax gratis ukhamawa.",
-        "generic-response": "Yatiytawa. Lurasktawa '{query}' uka mayitamarjama. Munatasti uñjaña kuna p'anqanakas munasi?"
+        "generic-response": "Yatiytawa. Lurasktawa '{query}' uka mayitamarjama. Munatasti uñjaña kuna p'anqanakas munasi?",
+        "cd-required": "Lurañanak qalltañatakix, **Ciudadanía Digital** ukan qillqt'atäñamawa. Munastat uñjañ qillqt'atätasa?",
+        "cd-verify-btn": "Qillqata uñjañä",
+        "cd-verifying": "Jark'añ thakhinaka qalltaski... 🛡️",
+        "cd-biometric": "Uñnaqam uñakiptaskwa...",
+        "cd-encryption": "Jakawi t'inkim llawintaskwa...",
+        "cd-success": "✅ Uñnaqam jikxatatawa. **Ciudadanía Digital** qillqt'atätax jichhax wali jark'atäxiwa.",
+        "security-level": "Jark'awinaka: Taqpacha",
+        "biometric-prompt": "Uyay uñacht'ayam SEGIP ukan uñjkayañapataki"
     }
 };
 

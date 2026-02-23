@@ -8,6 +8,7 @@ import BlockchainNotarization from '@/components/BlockchainNotarization';
 import ProcedureCard from '@/components/ProcedureCard';
 import AiAgent from '@/components/AiAgent';
 import ProcedureModal from '@/components/ProcedureModal';
+import ProjectExplanationModal from '@/components/ProjectExplanationModal';
 import { useLanguage } from '@/context/LanguageContext';
 import { useProcedures } from '@/context/ProcedureContext';
 
@@ -61,6 +62,7 @@ export default function Home() {
 
       <AiAgent />
       <ProcedureModal />
+      <ProjectExplanationModal />
     </>
   );
 }

@@ -6,7 +6,7 @@ import { useProcedures } from '@/context/ProcedureContext';
 
 export default function ProcedureModal() {
     const { t } = useLanguage();
-    const { activeProcedure, setActiveProcedure } = useProcedures();
+    const { activeProcedure, setActiveProcedure, isDigitalCitizen, triggerAiMessage } = useProcedures();
 
     if (!activeProcedure) return null;
 
@@ -36,9 +36,80 @@ export default function ProcedureModal() {
                 position: 'relative'
             }} onClick={(e) => e.stopPropagation()}>
                 <X
-                    style={{ position: 'absolute', top: '24px', right: '24px', cursor: 'pointer', color: '#999' }}
+                    style={{ position: 'absolute', top: '24px', right: '24px', cursor: 'pointer', color: '#999', zIndex: 100 }}
                     onClick={() => setActiveProcedure(null)}
                 />
+
+                {!isDigitalCitizen && (
+                    <div style={{
+                        position: 'absolute',
+                        top: 0, left: 0, right: 0, bottom: 0,
+                        background: 'rgba(255, 255, 255, 0.96)',
+                        backdropFilter: 'blur(8px)',
+                        zIndex: 50,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '40px',
+                        textAlign: 'center',
+                        borderRadius: '12px',
+                        animation: 'fadeIn 0.3s ease-out'
+                    }}>
+                        <div style={{
+                            width: '80px', height: '80px', background: 'rgba(30, 64, 175, 0.1)',
+                            borderRadius: '24px', display: 'flex', alignItems: 'center',
+                            justifyContent: 'center', marginBottom: '24px', color: '#1E40AF'
+                        }}>
+                            <ShieldCheck size={48} />
+                        </div>
+                        <h2 style={{ fontSize: '28px', fontWeight: 800, color: '#111827', marginBottom: '16px', letterSpacing: '-0.02em' }}>
+                            Identidad Digital Requerida
+                        </h2>
+                        <p style={{ color: '#4B5563', fontSize: '17px', lineHeight: '1.6', maxWidth: '520px', marginBottom: '36px' }}>
+                            Para garantizar la seguridad y validez legal de este trámite, es necesario contar con un registro activo en <strong>Ciudadanía Digital</strong>.
+                        </p>
+                        <div style={{ display: 'flex', gap: '16px' }}>
+                            <button
+                                style={{
+                                    padding: '16px 32px',
+                                    background: '#1E40AF',
+                                    color: 'white',
+                                    borderRadius: '14px',
+                                    fontWeight: 700,
+                                    fontSize: '15px',
+                                    cursor: 'pointer',
+                                    border: 'none',
+                                    boxShadow: '0 10px 20px -5px rgba(30, 64, 175, 0.3)',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                className="hover-scale"
+                                onClick={() => {
+                                    setActiveProcedure(null);
+                                    triggerAiMessage("¿Cómo me registro en Ciudadanía Digital?");
+                                }}
+                            >
+                                Registrarme Ahora
+                            </button>
+                            <button
+                                style={{
+                                    padding: '16px 32px',
+                                    background: 'rgba(0,0,0,0.05)',
+                                    color: '#111827',
+                                    borderRadius: '14px',
+                                    fontWeight: 700,
+                                    fontSize: '15px',
+                                    cursor: 'pointer',
+                                    border: 'none',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                onClick={() => setActiveProcedure(null)}
+                            >
+                                Volver
+                            </button>
+                        </div>
+                    </div>
+                )}
 
                 <div style={{ marginBottom: '40px' }}>
                     <p style={{ color: 'var(--primary-blue)', fontWeight: 700, fontSize: '14px', textTransform: 'uppercase', marginBottom: '10px' }}>

@@ -18,10 +18,14 @@ import {
     Shield,
     Fingerprint,
     Cpu,
-    Globe
+    Globe,
+    Info
 } from 'lucide-react';
 
+import { useProcedures } from '@/context/ProcedureContext';
+
 export default function BlockchainNotarization() {
+    const { openExplanation } = useProcedures();
     const [stage, setStage] = useState('dashboard'); // 'dashboard', 'processing', 'result', 'verify'
     const [fileName, setFileName] = useState('');
     const [description, setDescription] = useState('');
@@ -112,6 +116,29 @@ export default function BlockchainNotarization() {
                     <p style={{ maxWidth: '600px', margin: '0 auto', color: '#64748b', fontSize: '16px' }}>
                         Proteja la integridad de sus documentos mediante el anclaje de huellas digitales en el libro mayor distribuido del Estado.
                     </p>
+                    <button
+                        onClick={() => openExplanation('blockchain')}
+                        style={{
+                            marginTop: '25px',
+                            padding: '12px 28px',
+                            background: 'rgba(30, 64, 175, 0.05)',
+                            border: '1px solid #1E40AF',
+                            borderRadius: '100px',
+                            color: '#1E40AF',
+                            fontSize: '14px',
+                            fontWeight: 800,
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s ease',
+                            boxShadow: '0 4px 15px rgba(30, 64, 175, 0.1)',
+                            letterSpacing: '0.5px'
+                        }}
+                        className="hover-scale"
+                    >
+                        <Info size={18} color="#1E40AF" /> Ver propuesta tecnológica (Blockchain)
+                    </button>
                 </div>
 
                 {/* Interaction Card */}
@@ -428,7 +455,7 @@ export default function BlockchainNotarization() {
 
                                     <div style={{ gridColumn: 'span 2' }}>
                                         <div style={{ fontSize: '11px', fontWeight: 800, color: '#94a3b8', textTransform: 'uppercase', marginBottom: '8px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                            <History size={12} /> ID de Transacción Blockchain
+                                            <History size={12} /> ID del documento
                                         </div>
                                         <div style={{ fontFamily: 'monospace', fontSize: '14px', background: 'white', padding: '15px', borderRadius: '12px', border: '1px solid #e2e8f0', color: 'var(--primary-blue)', fontWeight: 700 }}>
                                             0x7a2d42b1f8c149afbf4c8996fb92427ae41e46e9

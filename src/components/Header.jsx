@@ -1,10 +1,12 @@
 'use client';
 
-import { Search, Moon, ChevronDown, Globe } from 'lucide-react';
+import { Search, Moon, ChevronDown, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useProcedures } from '@/context/ProcedureContext';
 
 export default function Header() {
     const { lang, setLang, t } = useLanguage();
+    const { isDigitalCitizen } = useProcedures();
 
     return (
         <header style={{ background: 'white' }}>
@@ -35,6 +37,22 @@ export default function Header() {
                             <span style={{ color: '#999', fontSize: '13px' }}>Buscar...</span>
                             <Search size={16} color="#999" />
                         </div>
+
+                        {isDigitalCitizen && (
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                background: '#E0F2FE',
+                                padding: '6px 14px',
+                                borderRadius: '30px',
+                                border: '1px solid #BAE6FD',
+                                animation: 'fadeIn 0.5s ease-out'
+                            }}>
+                                <ShieldCheck size={16} color="#0369A1" />
+                                <span style={{ fontSize: '12px', fontWeight: 700, color: '#0369A1' }}>Identidad Verificada</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

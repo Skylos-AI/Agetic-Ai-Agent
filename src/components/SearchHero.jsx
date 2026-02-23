@@ -6,7 +6,7 @@ import { useProcedures } from '@/context/ProcedureContext';
 
 export default function SearchHero() {
     const { t } = useLanguage();
-    const { searchQuery, setSearchQuery, detectedProcedure, setActiveProcedure, triggerAiMessage } = useProcedures();
+    const { searchQuery, setSearchQuery, detectedProcedure, setActiveProcedure, triggerAiMessage, openExplanation } = useProcedures();
 
     return (
         <section className="hero-banner" style={{ overflow: 'hidden' }}>
@@ -108,6 +108,32 @@ export default function SearchHero() {
                             </button>
                         </div>
                     </div>
+
+                    {/* Secondary Link for AI Proposal */}
+                    <button
+                        onClick={() => openExplanation('ai')}
+                        style={{
+                            background: 'rgba(218, 41, 28, 0.15)',
+                            backdropFilter: 'blur(12px)',
+                            border: '1px solid #DA291C',
+                            color: 'white',
+                            fontSize: '14px',
+                            fontWeight: 700,
+                            cursor: 'pointer',
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '10px',
+                            padding: '12px 24px',
+                            borderRadius: '100px',
+                            transition: 'all 0.3s ease',
+                            boxShadow: '0 0 20px rgba(218, 41, 28, 0.3)',
+                            marginTop: '10px'
+                        }}
+                        className="hover-scale"
+                    >
+                        <Info size={16} color="#DA291C" fill="white" />
+                        <span style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>Conoce la Propuesta de IA (Skylos)</span>
+                    </button>
                 </div>
 
                 {/* Carousel Arrows */}
